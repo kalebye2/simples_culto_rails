@@ -1,0 +1,11 @@
+<h1>Cultos</h1>
+
+<ul class="lista-cultos">
+  <% @cultos.each do |culto| %>
+    <li>
+      <%= link_to culto do %>
+        <%= render_data_brasil culto.data %> - <%= render_horario_brasil culto.horario %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

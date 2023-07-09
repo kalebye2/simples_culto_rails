@@ -1,0 +1,21 @@
+<%= form_for musica, local: true do |form| %>
+  <div class="field">
+    <%= form.label "Título" %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Autor" %>
+    <%= form.text_field :autor %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Letra" %>
+    <%= form.text_area :letra, size: "50x20" %>
+  </div>
+
+  <div class="action">
+    <%= form.submit %>
+  </div>
+
+<% end %>

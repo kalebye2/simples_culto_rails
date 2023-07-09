@@ -1,0 +1,12 @@
+<h1>Culto de <%= render_data_brasil @culto.data %> às <%= render_horario_brasil @culto.horario %></h1>
+<!-- QR Code da página, eu acho -->
+<div style="width:200px;height:200px;margin:auto;">
+  <%== gerar_qr_code_svg(request.url) %>
+</div>
+
+<h2>Músicas</h2>
+<% @musicas.each do |musica| %>
+  <h3><%= musica.titulo %></h3>
+  <%== Kramdown::Document.new(musica.letra).to_html %>
+  <hr />
+<% end %>

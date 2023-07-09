@@ -1,0 +1,19 @@
+<h1>Catálogo de músicas</h1>
+<%= link_to "+ música", new_musica_path %>
+<p>Músicas registradas: <%= Musica.count %></p>
+
+<ul class="lista-musicas">
+  <% @musicas.each do |musica| %>
+    <li>
+      <%= link_to musica do %>
+        <%= musica.titulo %>
+        <% if !musica.autor.empty? %>
+          <span style="font-size:.9em;">
+            (<%= musica.autor %>)
+          </span>
+        <% end %>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
+

@@ -1,0 +1,9 @@
+<h1><%= @musica.titulo %></h1>
+<% if !@musica.autor.empty? %>
+  <h2><%= @musica.autor %></h2>
+<% end %>
+<%= link_to "voltar", musicas_path %>
+<%= link_to "editar", edit_musica_path(@musica) %>
+<div class="musica-letra">
+  <%== Kramdown::Document.new(@musica.letra).to_html %>
+</div>
