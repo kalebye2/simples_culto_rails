@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_08_225529) do
+ActiveRecord::Schema.define(version: 2023_07_14_192718) do
+
+  create_table "culto_musica_juncoes", force: :cascade do |t|
+    t.integer "culto_id"
+    t.integer "musica_id"
+    t.integer "ordem"
+    t.index ["culto_id", "musica_id"], name: "index_culto_musica_juncoes_on_culto_id_and_musica_id"
+    t.index ["musica_id", "culto_id"], name: "index_culto_musica_juncoes_on_musica_id_and_culto_id"
+  end
 
   create_table "cultos", force: :cascade do |t|
     t.date "data"
     t.time "horario"
-  end
-
-  create_table "cultos_musicas", id: false, force: :cascade do |t|
-    t.integer "culto_id", null: false
-    t.integer "musica_id", null: false
-    t.integer "ordem"
-    t.index ["culto_id", "musica_id"], name: "index_cultos_musicas_on_culto_id_and_musica_id"
-    t.index ["musica_id", "culto_id"], name: "index_cultos_musicas_on_musica_id_and_culto_id"
+    t.text "notas"
   end
 
   create_table "musicas", force: :cascade do |t|

@@ -1,0 +1,9 @@
+<div class="musica">
+  <h2><%= musica.titulo %></h2>
+  <% if !musica.autor.empty? %>
+    <h3><%= musica.autor %></h3>
+  <% end %>
+  <div class="musica-letra">
+    <%== Kramdown::Document.new(musica.letra).to_html %>
+  </div>
+</div>

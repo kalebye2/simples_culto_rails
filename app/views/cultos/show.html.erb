@@ -1,6 +1,6 @@
 <h1>Culto de <%= render_data_brasil @culto.data %> às <%= render_horario_brasil @culto.horario %></h1>
 <!-- QR Code da página, eu acho -->
-<div style="width:200px;height:200px;margin:auto;">
+<div class="qr-container">
   <%== gerar_qr_code_svg(request.url) %>
 </div>
 
@@ -10,3 +10,5 @@
   <%== Kramdown::Document.new(musica.letra).to_html %>
   <hr />
 <% end %>
+<%= link_to "Início", root_path %><br />
+<%= link_to "Cultos de hoje", cultos_de_hoje_cultos_path %>

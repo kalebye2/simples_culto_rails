@@ -1,0 +1,24 @@
+<h1><%= Rails.application.class.parent.to_s.underscore.humanize.titleize %></h1>
+<!-- QR Code da página -->
+<div class="qr-container">
+  <%== gerar_qr_code_svg(request.url) %>
+</div>
+
+<% if !@ultimo_culto.nil? %>
+  <div class="proximo-culto">
+    <h1>Programação do culto de <%= @ultimo_culto.descricao %></h1>
+    <%= link_to "Recarregar" %>
+    <% if !@ultimo_culto.nil? %>
+      <% @ultimo_culto.musicas.order(:ordem).each do |musica| %>
+        <%= render "musicas/cartao", musica: musica %>
+        <hr />
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+<% if !@cultos_de_hoje.empty? %>
+  <h3>Cultos de hoje</h3>
+  <% @cultos_de_hoje.each do |culto| %>
+    <%= link_to render_horario_brasil(culto.horario), culto %>
+  <% end %>
+<% end %>

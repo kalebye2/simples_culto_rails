@@ -1,0 +1,7 @@
+<h1>Cultos de hoje</h1>
+
+<!-- lembrar de gerar QR -->
+
+<% @cultos.each do |culto| %>
+  <%= link_to render_horario_brasil(culto.horario), culto %>
+<% end %>

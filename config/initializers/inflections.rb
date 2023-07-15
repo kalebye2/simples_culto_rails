@@ -14,3 +14,23 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'funcao', 'funcoes'
+  inflect.irregular 'juncao', 'juncoes'
+  inflect.irregular 'especializacao', 'especializacoes'
+  inflect.irregular 'regiao', 'regioes'
+  inflect.irregular 'papel', 'papeis'
+  inflect.irregular 'pais', 'paises'
+  inflect.irregular 'nota', 'notas'
+  inflect.irregular 'local', 'locais'
+  inflect.irregular 'valor', 'valores'
+  inflect.irregular 'especializacao', 'especializacoes'
+  inflect.irregular 'alimentacao', 'alimentacoes'
+  inflect.irregular 'comunicacao', 'comunicacoes'
+  inflect.irregular 'informacao', 'informacoes'
+  inflect.irregular 'responsavel', 'responsaveis'
+  inflect.irregular 'identificador', 'identificadores'
+  inflect.irregular 'autor', 'autores'
+  inflect.irregular 'sessao', 'sessoes'
+end

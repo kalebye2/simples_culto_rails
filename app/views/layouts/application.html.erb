@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JibmApp</title>
+    <title>
+      <%= Rails.application.class.parent.to_s.underscore.humanize.titleize %>
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

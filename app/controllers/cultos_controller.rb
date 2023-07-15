@@ -40,6 +40,10 @@ class CultosController < ApplicationController
   def destroy
   end
 
+  def hoje
+    @cultos = Culto.where(data: Date.today)
+  end
+
   private
 
   def set_culto
